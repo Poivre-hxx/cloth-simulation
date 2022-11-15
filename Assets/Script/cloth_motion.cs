@@ -8,7 +8,7 @@ public class cloth_motion : MonoBehaviour
     float mass = 1;
     float damping = 0.99f; // 摩擦系数（模拟空气阻力等）
     float rho = 0.995f;
-    float spring_k = 8000;
+    float spring_k = 8000; // 弹性系数
     int[] E; // 存储每条边的下标
     float[] L; // 每条边的长度
     Vector3[] V;
@@ -48,6 +48,7 @@ public class cloth_motion : MonoBehaviour
         mesh.vertices = X;
         mesh.triangles = triangles;
         mesh.uv = UV;
+        // 从三角形和顶点重新计算网格的法线
         mesh.RecalculateNormals();
 
         int[] _E = new int[triangles.Length * 2];

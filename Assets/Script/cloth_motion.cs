@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class cloth_motion : MonoBehaviour
 {
-    float t = 0.0333f;
+    float t = 0.0333f; // 模拟的时间长度
     float mass = 1;
-    float damping = 0.99f;
+    float damping = 0.99f; // 摩擦系数（模拟空气阻力等）
     float rho = 0.995f;
     float spring_k = 8000;
-    int[] E;
-    float[] L;
+    int[] E; // 存储每条边的下标
+    float[] L; // 每条边的长度
     Vector3[] V;
 
     private bool m_EnableChebyshevAcceleration = true;
